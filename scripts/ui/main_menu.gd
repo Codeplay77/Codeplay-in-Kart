@@ -195,7 +195,7 @@ func _select_track(tid: String) -> void:
 	var def := TrackCatalog.get_def(tid)
 	var theme_label: String = TrackThemes.THEMES[def.theme].label
 	_track_info.text = "%s  ·  %s  ·  %d m" % [def.name, theme_label, int(TrackPreview.track_length(tid))]
-	(_track_buttons[tid] as Button).set_pressed_no_signal(true)
+	(_track_buttons[tid] as Button).button_pressed = true
 
 
 func _open_setup() -> void:

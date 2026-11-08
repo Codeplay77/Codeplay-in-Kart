@@ -1,5 +1,6 @@
 # Codeplay in Kart 🏁
 
+[![Versão](https://img.shields.io/badge/vers%C3%A3o-0.1.1-FFD18A)](CHANGELOG.md)
 [![Licença: CC0-1.0](https://img.shields.io/badge/licen%C3%A7a-CC0%201.0-1EF5A6)](LICENSE)
 [![Godot 4.7](https://img.shields.io/badge/Godot-4.7-478CBF?logo=godotengine&logoColor=white)](https://godotengine.org/)
 [![Site](https://img.shields.io/badge/site-codeplay.com.br-FF7A3C)](https://codeplay.com.br)
@@ -121,6 +122,10 @@ Temas novos ficam em `scripts/track/track_themes.gd` (céu, sol, neblina, textur
 - [ ] Modo contra o tempo com fantasma e recordes por pista
 - [ ] Mais itens e escudo
 - [ ] Decalques/adesivos e mais peças na garagem
+
+## Versões
+
+O histórico de mudanças está no [CHANGELOG](CHANGELOG.md).
 
 ## Como contribuir
 

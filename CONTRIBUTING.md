@@ -23,6 +23,16 @@ Obrigado por querer ajudar o **Codeplay in Kart**! 🏎️
 - Siga o [contrato de assets](docs/ASSET_CONTRACT.md): nomes de sockets, materiais e eixos.
 - Respeite os orçamentos de polígonos (8 karts na tela em GPUs medianas).
 
+## Versionamento
+
+O projeto usa [versionamento semântico](https://semver.org/lang/pt-BR/): `MAIOR.MENOR.CORREÇÃO`.
+Registre cada mudança relevante no [CHANGELOG](CHANGELOG.md). Ao lançar uma versão, atualize:
+
+- `project.godot`: `config/version` (é o número exibido no menu do jogo);
+- `export_presets.cfg`: `application/file_version`, `application/product_version`,
+  `version/name` e some 1 em `version/code` (exigência do Android);
+- o selo de versão no início do `README.md`.
+
 ## Licença das contribuições
 
 Ao enviar uma contribuição, você concorda em publicá-la sob a [CC0 1.0](LICENSE).
