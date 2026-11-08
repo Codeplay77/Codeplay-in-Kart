@@ -1,0 +1,100 @@
+{
+  "v2/black_diamond.ogg": {
+    "input_lufs": -15.98,
+    "input_true_peak_db": -1.64,
+    "playback_gain_db": -4.02,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -5.66
+  },
+  "v2/drive.ogg": {
+    "input_lufs": -16.12,
+    "input_true_peak_db": -3.19,
+    "playback_gain_db": -3.88,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -7.07
+  },
+  "v2/empty_stretch.ogg": {
+    "input_lufs": -16.1,
+    "input_true_peak_db": -2.76,
+    "playback_gain_db": -3.9,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -6.66
+  },
+  "v2/happy_ukulele_island_surfing.ogg": {
+    "input_lufs": -19.1,
+    "input_true_peak_db": -0.95,
+    "playback_gain_db": -2.05,
+    "expected_lufs": -21.15,
+    "expected_true_peak_db": -3.0
+  },
+  "v2/menu_apple_cider.ogg": {
+    "input_lufs": -16.04,
+    "input_true_peak_db": -1.2,
+    "playback_gain_db": -3.96,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -5.16
+  },
+  "v2/microwave.ogg": {
+    "input_lufs": -20.07,
+    "input_true_peak_db": -0.8,
+    "playback_gain_db": -2.2,
+    "expected_lufs": -22.27,
+    "expected_true_peak_db": -3.0
+  },
+  "v2/podium_funky_victory_loop.ogg": {
+    "input_lufs": -16.11,
+    "input_true_peak_db": -4.09,
+    "playback_gain_db": -3.89,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -7.98
+  },
+  "v2/raspberry_jam.ogg": {
+    "input_lufs": -16.05,
+    "input_true_peak_db": -1.54,
+    "playback_gain_db": -3.95,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -5.49
+  },
+  "v2/sideways_city.ogg": {
+    "input_lufs": -16.02,
+    "input_true_peak_db": -4.12,
+    "playback_gain_db": -3.98,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -8.1
+  },
+  "v2/super_wreck_roadway.ogg": {
+    "input_lufs": -16.12,
+    "input_true_peak_db": -1.51,
+    "playback_gain_db": -3.88,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -5.39
+  },
+  "v2/synesthesia.ogg": {
+    "input_lufs": -16.04,
+    "input_true_peak_db": -4.0,
+    "playback_gain_db": -3.96,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -7.96
+  },
+  "jingle_finish_win.ogg": {
+    "input_lufs": -16.07,
+    "input_true_peak_db": -8.7,
+    "playback_gain_db": -3.93,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -12.63
+  },
+  "jingle_finish_good.ogg": {
+    "input_lufs": -16.1,
+    "input_true_peak_db": -5.88,
+    "playback_gain_db": -3.9,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -9.78
+  },
+  "jingle_finish_lose.ogg": {
+    "input_lufs": -16.06,
+    "input_true_peak_db": -5.69,
+    "playback_gain_db": -3.94,
+    "expected_lufs": -20.0,
+    "expected_true_peak_db": -9.63
+  }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "file": "engine/engine_rpm1.wav",
+    "rate": 44100,
+    "seconds": 1.793,
+    "peak_dbfs": -8.97,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.005442
+  },
+  {
+    "file": "engine/engine_rpm2.wav",
+    "rate": 44100,
+    "seconds": 1.299,
+    "peak_dbfs": -8.85,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.005456
+  },
+  {
+    "file": "engine/engine_rpm3.wav",
+    "rate": 44100,
+    "seconds": 1.822,
+    "peak_dbfs": -8.21,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.016809
+  },
+  {
+    "file": "engine/engine_rpm4.wav",
+    "rate": 44100,
+    "seconds": 1.2,
+    "peak_dbfs": -5.37,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.003043
+  },
+  {
+    "file": "engine/alt_2stroke_bike/engine_rpm1.wav",
+    "rate": 44100,
+    "seconds": 1.001,
+    "peak_dbfs": -8.12,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.000486
+  },
+  {
+    "file": "engine/alt_2stroke_bike/engine_rpm2.wav",
+    "rate": 44100,
+    "seconds": 1.497,
+    "peak_dbfs": -7.54,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.026331
+  },
+  {
+    "file": "engine/alt_2stroke_bike/engine_rpm3.wav",
+    "rate": 44100,
+    "seconds": 1.399,
+    "peak_dbfs": -7.84,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.025221
+  },
+  {
+    "file": "engine/alt_4stroke_truck/engine_rpm1.wav",
+    "rate": 44100,
+    "seconds": 1.979,
+    "peak_dbfs": -7.6,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.012935
+  },
+  {
+    "file": "engine/alt_4stroke_truck/engine_rpm2.wav",
+    "rate": 44100,
+    "seconds": 2.01,
+    "peak_dbfs": -7.89,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.000194
+  },
+  {
+    "file": "engine/alt_4stroke_truck/engine_rpm3.wav",
+    "rate": 44100,
+    "seconds": 2.001,
+    "peak_dbfs": -6.22,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.002019
+  },
+  {
+    "file": "engine_idle.wav",
+    "rate": 44100,
+    "seconds": 1.982,
+    "peak_dbfs": -5.0,
+    "rms_dbfs": -19.76,
+    "loop_seam_step": 0.009209
+  },
+  {
+    "file": "engine_high.wav",
+    "rate": 44100,
+    "seconds": 2.011,
+    "peak_dbfs": -5.0,
+    "rms_dbfs": -19.72,
+    "loop_seam_step": 7.1e-05
+  },
+  {
+    "file": "skid_loop.wav",
+    "rate": 44100,
+    "seconds": 2.18,
+    "peak_dbfs": -7.79,
+    "rms_dbfs": -18.0,
+    "loop_seam_step": 0.003437
+  },
+  {
+    "file": "boost.wav",
+    "rate": 44100,
+    "seconds": 4.0,
+    "peak_dbfs": -5.0,
+    "rms_dbfs": -21.94,
+    "loop_seam_step": null
+  },
+  {
+    "file": "hit.wav",
+    "rate": 44100,
+    "seconds": 0.769,
+    "peak_dbfs": -6.4,
+    "rms_dbfs": -20.1,
+    "loop_seam_step": null
+  },
+  {
+    "file": "crash.wav",
+    "rate": 44100,
+    "seconds": 0.463,
+    "peak_dbfs": -8.44,
+    "rms_dbfs": -27.92,
+    "loop_seam_step": null
+  },
+  {
+    "file": "bump.wav",
+    "rate": 44100,
+    "seconds": 0.269,
+    "peak_dbfs": -5.0,
+    "rms_dbfs": -22.83,
+    "loop_seam_step": null
+  },
+  {
+    "file": "cheer.wav",
+    "rate": 44100,
+    "seconds": 10.0,
+    "peak_dbfs": -5.0,
+    "rms_dbfs": -20.44,
+    "loop_seam_step": null
+  },
+  {
+    "file": "screech.wav",
+    "rate": 44100,
+    "seconds": 1.9,
+    "peak_dbfs": -6.28,
+    "rms_dbfs": -20.0,
+    "loop_seam_step": null
+  },
+  {
+    "file": "click.wav",
+    "rate": 44100,
+    "seconds": 0.04,
+    "peak_dbfs": -13.76,
+    "rms_dbfs": -27.44,
+    "loop_seam_step": null
+  },
+  {
+    "file": "confirm.wav",
+    "rate": 44100,
+    "seconds": 0.29,
+    "peak_dbfs": -13.15,
+    "rms_dbfs": -23.27,
+    "loop_seam_step": null
+  },
+  {
+    "file": "back.wav",
+    "rate": 44100,
+    "seconds": 0.061,
+    "peak_dbfs": -5.0,
+    "rms_dbfs": -26.44,
+    "loop_seam_step": null
+  },
+  {
+    "file": "beep.wav",
+    "rate": 48000,
+    "seconds": 0.4,
+    "peak_dbfs": -8.08,
+    "rms_dbfs": -22.14,
+    "loop_seam_step": null
+  },
+  {
+    "file": "go.wav",
+    "rate": 48000,
+    "seconds": 0.65,
+    "peak_dbfs": -7.76,
+    "rms_dbfs": -22.06,
+    "loop_seam_step": null
+  },
+  {
+    "file": "pickup.wav",
+    "rate": 48000,
+    "seconds": 0.6,
+    "peak_dbfs": -9.52,
+    "rms_dbfs": -22.05,
+    "loop_seam_step": null
+  },
+  {
+    "file": "item_ready.wav",
+    "rate": 48000,
+    "seconds": 0.58,
+    "peak_dbfs": -9.25,
+    "rms_dbfs": -22.07,
+    "loop_seam_step": null
+  },
+  {
+    "file": "drift_level.wav",
+    "rate": 48000,
+    "seconds": 0.5,
+    "peak_dbfs": -8.97,
+    "rms_dbfs": -22.11,
+    "loop_seam_step": null
+  },
+  {
+    "file": "lap.wav",
+    "rate": 48000,
+    "seconds": 0.8,
+    "peak_dbfs": -10.42,
+    "rms_dbfs": -22.04,
+    "loop_seam_step": null
+  },
+  {
+    "file": "finish.wav",
+    "rate": 48000,
+    "seconds": 1.15,
+    "peak_dbfs": -10.74,
+    "rms_dbfs": -22.03,
+    "loop_seam_step": null
+  },
+  {
+    "file": "shoot.wav",
+    "rate": 48000,
+    "seconds": 0.32,
+    "peak_dbfs": -7.5,
+    "rms_dbfs": -22.11,
+    "loop_seam_step": null
+  }
+]

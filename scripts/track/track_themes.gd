@@ -1,0 +1,201 @@
+class_name TrackThemes
+extends RefCounted
+## Texturas usam o formato "pasta/id@resolução" (ex.: "grass/leafy_grass@2k"), que aponta para
+## res://assets/textures/pasta/id_diff_2k.jpg (+ _nor_gl_ e _arm_).
+## "scatter" lista a vegetação/pedras espalhadas pelo terreno:
+##   [prop, quantidade, dist. mín, dist. máx, escala mín, escala máx, agrupamento, sombras, {material: cor}]
+
+const BASE := {
+	"sky": "qwantani_late_afternoon_puresky", "sky_energy": 1.0, "ambient": 0.9,
+	"sun_color": Color(1.0, 0.84, 0.66), "sun_energy": 1.7, "sun_pitch": -28.0, "sun_yaw": -130.0,
+	"fog_color": Color(0.95, 0.78, 0.6), "fog_density": 0.0012, "fog_aerial": 0.6,
+	"exposure": 1.0, "saturation": 1.12, "contrast": 1.05, "glow": 0.55,
+	"ground_a": "grass/leafy_grass@2k", "tint_a": Color(0.62, 0.9, 0.42), "scale_a": 0.16,
+	"ground_b": "dirt/forest_ground_04@2k", "tint_b": Color(1.0, 0.92, 0.82), "scale_b": 0.2,
+	"road": "asphalt/asphalt_track@2k", "road_tint": Color(0.82, 0.82, 0.86),
+	"curb_a": Color(0.85, 0.08, 0.06), "curb_b": Color(0.95, 0.95, 0.93), "curb_glow": 0.0,
+	"line_color": Color(0.92, 0.92, 0.9), "line_glow": 0.0,
+	"rail_color": Color(0.78, 0.8, 0.84), "rail_glow": Color(0, 0, 0),
+	"hill_base": 14.0, "hill_var": 22.0, "noise_amp": 3.5,
+	"liquid": "", "liquid_level": -2.5,
+	"lamps": false, "kart_lights": false,
+	"start_props": true,
+	"scatter": [],
+}
+
+const THEMES := {
+	"valley": {
+		"label": "Vale",
+		"scatter": [
+			["tree_pine", 260, 6.0, 260.0, 0.8, 1.3, 0.3, true, {}],
+			["tree_round", 140, 6.0, 220.0, 0.8, 1.25, 0.2, true, {}],
+			["bush", 320, 0.0, 160.0, 0.7, 1.4, 0.0, false, {}],
+			["rock_a", 40, 2.0, 250.0, 0.6, 1.6, 0.0, true, {}],
+			["rock_b", 40, 2.0, 250.0, 0.6, 1.6, 0.0, true, {}],
+			["rock_c", 40, 2.0, 250.0, 0.6, 1.6, 0.0, true, {}],
+			["grass_tuft", 400, 0.0, 90.0, 0.8, 1.5, 0.0, false, {}],
+		],
+	},
+	"desert": {
+		"label": "Deserto",
+		"sky": "kloofendal_43d_clear_puresky", "sun_color": Color(1.0, 0.93, 0.8), "sun_energy": 2.0,
+		"sun_pitch": -42.0, "sun_yaw": 40.0,
+		"fog_color": Color(0.96, 0.84, 0.66), "fog_density": 0.0016,
+		"ground_a": "coast_sand_02@1k", "tint_a": Color(1.0, 0.83, 0.6), "scale_a": 0.1,
+		"ground_b": "dry_ground_01@1k", "tint_b": Color(1.0, 0.88, 0.75), "scale_b": 0.14,
+		"road_tint": Color(0.92, 0.86, 0.8),
+		"curb_a": Color(0.95, 0.45, 0.05), "curb_b": Color(0.98, 0.95, 0.88),
+		"hill_base": 10.0, "hill_var": 26.0, "noise_amp": 5.0,
+		"scatter": [
+			["cactus_a", 200, 1.0, 220.0, 0.8, 1.35, 0.25, true, {}],
+			["cactus_b", 260, 0.0, 160.0, 0.7, 1.4, 0.15, true, {}],
+			["rock_mesa", 40, 38.0, 300.0, 0.7, 1.7, 0.0, true, {}],
+			["rock_a", 110, 1.0, 250.0, 0.5, 2.2, 0.3, true, {"rock": Color(1.0, 0.8, 0.62), "moss": Color(0.9, 0.75, 0.5)}],
+			["rock_c", 110, 1.0, 250.0, 0.5, 2.2, 0.3, true, {"rock": Color(1.0, 0.8, 0.62), "moss": Color(0.9, 0.75, 0.5)}],
+			["rock_b", 60, 4.0, 220.0, 0.8, 2.6, 0.2, true, {"rock": Color(1.0, 0.78, 0.6), "moss": Color(0.92, 0.75, 0.5)}],
+			["tree_dead", 40, 4.0, 200.0, 0.8, 1.3, 0.2, true, {}],
+			["grass_tuft", 260, 0.0, 120.0, 0.6, 1.2, 0.35, false, {"grass": Color(1.0, 0.85, 0.45)}],
+		],
+	},
+	"beach": {
+		"label": "Praia",
+		"sky": "qwantani_noon_puresky", "sun_color": Color(1.0, 0.97, 0.9), "sun_energy": 1.9,
+		"sun_pitch": -52.0, "sun_yaw": -60.0,
+		"fog_color": Color(0.75, 0.86, 0.96), "fog_density": 0.0009, "saturation": 1.2,
+		"ground_a": "coast_sand_02@1k", "tint_a": Color(1.0, 0.95, 0.84), "scale_a": 0.12,
+		"ground_b": "grass/leafy_grass@2k", "tint_b": Color(0.55, 0.88, 0.4), "scale_b": 0.16,
+		"curb_a": Color(0.05, 0.55, 0.95), "curb_b": Color(0.97, 0.97, 0.95),
+		"hill_base": -18.0, "hill_var": 10.0, "noise_amp": 2.0,
+		"liquid": "water", "liquid_level": -2.2,
+		"scatter": [
+			["palm_tree", 170, 3.0, 160.0, 0.8, 1.25, 0.1, true, {}],
+			["beach_umbrella", 34, 3.0, 50.0, 0.9, 1.1, 0.0, true, {}],
+			["bush", 120, 0.0, 70.0, 0.7, 1.3, 0.0, false, {}],
+			["rock_b", 30, 4.0, 200.0, 0.6, 1.4, 0.0, true, {}],
+			["grass_tuft", 300, 0.0, 60.0, 0.8, 1.5, 0.0, false, {}],
+		],
+	},
+	"autumn": {
+		"label": "Outono",
+		"sky": "qwantani_dusk_2_puresky", "sky_energy": 0.5, "sun_color": Color(1.0, 0.72, 0.45), "sun_energy": 1.6,
+		"sun_pitch": -18.0, "sun_yaw": -100.0,
+		"fog_color": Color(0.92, 0.7, 0.5), "fog_density": 0.0018,
+		"ground_a": "grass/leafy_grass@2k", "tint_a": Color(0.86, 0.72, 0.36),
+		"ground_b": "leaves_forest_ground@1k", "tint_b": Color(1.0, 0.85, 0.7), "scale_b": 0.18,
+		"curb_a": Color(0.85, 0.35, 0.05), "curb_b": Color(0.95, 0.93, 0.88),
+		"scatter": [
+			["tree_round", 150, 6.0, 230.0, 0.8, 1.3, 0.3, true, {"leaves": Color(1.0, 0.55, 0.15)}],
+			["tree_round", 110, 6.0, 230.0, 0.8, 1.3, 0.3, true, {"leaves": Color(0.95, 0.28, 0.1)}],
+			["tree_round", 70, 6.0, 230.0, 0.8, 1.2, 0.3, true, {"leaves": Color(1.0, 0.85, 0.25)}],
+			["tree_pine", 70, 8.0, 250.0, 0.8, 1.2, 0.3, true, {}],
+			["bush", 200, 0.0, 140.0, 0.7, 1.3, 0.0, false, {"leaves": Color(1.0, 0.5, 0.18)}],
+			["pumpkin_pile", 26, 1.0, 25.0, 0.9, 1.2, 0.0, true, {}],
+			["fern", 180, 0.0, 120.0, 0.8, 1.4, 0.0, false, {"leaves": Color(1.0, 0.7, 0.3)}],
+			["tree_dead", 16, 8.0, 200.0, 0.8, 1.2, 0.0, true, {}],
+		],
+	},
+	"snow": {
+		"label": "Neve",
+		"sky": "snow_field_puresky", "sky_energy": 0.55, "sun_color": Color(0.96, 0.97, 1.0), "sun_energy": 1.5,
+		"sun_pitch": -30.0, "sun_yaw": 70.0, "exposure": 0.95,
+		"fog_color": Color(0.86, 0.9, 0.97), "fog_density": 0.002, "saturation": 1.0,
+		"ground_a": "snow_02@1k", "tint_a": Color(0.98, 0.99, 1.0), "scale_a": 0.12,
+		"ground_b": "rock_ground@1k", "tint_b": Color(0.82, 0.86, 0.95), "scale_b": 0.15,
+		"road": "asphalt_snow@1k", "road_tint": Color(0.95, 0.96, 1.0),
+		"curb_a": Color(0.1, 0.35, 0.9), "curb_b": Color(0.97, 0.97, 1.0),
+		"hill_base": 26.0, "hill_var": 34.0, "noise_amp": 4.0,
+		"scatter": [
+			["tree_pine_snow", 280, 6.0, 260.0, 0.8, 1.35, 0.35, true, {}],
+			["crystal_cluster", 40, 3.0, 180.0, 0.7, 1.5, 0.0, true, {}],
+			["snowman", 12, 1.0, 20.0, 0.9, 1.1, 0.0, true, {}],
+			["rock_a", 60, 2.0, 250.0, 0.6, 1.8, 0.0, true, {"rock": Color(0.8, 0.85, 0.95), "moss": Color(0.95, 0.97, 1.0)}],
+		],
+	},
+	"canyon": {
+		"label": "Cânion",
+		"sky": "kloofendal_48d_partly_cloudy_puresky", "sky_energy": 0.85, "sun_color": Color(1.0, 0.88, 0.7), "sun_energy": 1.9,
+		"sun_pitch": -38.0, "sun_yaw": 150.0,
+		"fog_color": Color(0.92, 0.72, 0.56), "fog_density": 0.0014,
+		"ground_a": "red_sand@1k", "tint_a": Color(1.0, 0.86, 0.78), "scale_a": 0.12,
+		"ground_b": "rock_ground@1k", "tint_b": Color(0.95, 0.72, 0.58), "scale_b": 0.14,
+		"road_tint": Color(0.9, 0.84, 0.8),
+		"curb_a": Color(0.9, 0.2, 0.05), "curb_b": Color(0.98, 0.92, 0.8),
+		"hill_base": 30.0, "hill_var": 40.0, "noise_amp": 6.0,
+		"scatter": [
+			["rock_mesa", 70, 45.0, 280.0, 0.8, 1.7, 0.0, true, {}],
+			["cactus_a", 50, 3.0, 200.0, 0.8, 1.2, 0.2, true, {}],
+			["cactus_b", 60, 0.0, 150.0, 0.7, 1.3, 0.0, true, {}],
+			["rock_a", 50, 2.0, 250.0, 0.7, 2.0, 0.0, true, {"rock": Color(1.0, 0.62, 0.45), "moss": Color(0.9, 0.6, 0.4)}],
+			["rock_b", 40, 2.0, 250.0, 0.7, 2.0, 0.0, true, {"rock": Color(1.0, 0.62, 0.45), "moss": Color(0.9, 0.6, 0.4)}],
+			["tree_dead", 20, 8.0, 200.0, 0.8, 1.2, 0.0, true, {}],
+		],
+	},
+	"night": {
+		"label": "Noite",
+		"sky": "qwantani_night_puresky", "sky_energy": 0.07, "ambient": 1.3,
+		"sun_color": Color(0.6, 0.7, 1.0), "sun_energy": 0.35, "sun_pitch": -50.0, "sun_yaw": 30.0,
+		"fog_color": Color(0.09, 0.06, 0.17), "fog_density": 0.0042, "fog_aerial": 0.35,
+		"exposure": 1.35, "saturation": 1.2, "glow": 0.75,
+		"ground_a": "concrete_pavement@1k", "tint_a": Color(0.62, 0.62, 0.7), "scale_a": 0.12,
+		"ground_b": "concrete_pavement@1k", "tint_b": Color(0.55, 0.55, 0.62), "scale_b": 0.2,
+		"road_tint": Color(1.1, 1.1, 1.2),
+		"curb_a": Color(0.95, 0.1, 0.65), "curb_b": Color(0.1, 0.85, 0.95), "curb_glow": 0.45,
+		"line_color": Color(0.3, 0.9, 1.0), "line_glow": 1.0,
+		"rail_color": Color(0.25, 0.25, 0.3), "rail_glow": Color(0.0, 0.85, 1.0),
+		"hill_base": 2.0, "hill_var": 3.0, "noise_amp": 0.6,
+		"lamps": true, "lamp_spacing": 26.0, "kart_lights": true,
+		"city": {"prop": "building_block", "spacing": 15.0, "setback": 9.0, "height": [0.75, 1.7], "tints": [
+			{}, {"concrete": Color(0.75, 0.8, 1.0), "paint_white": Color(0.7, 0.78, 0.95)},
+			{"concrete": Color(1.0, 0.85, 0.7), "paint_white": Color(1.0, 0.9, 0.78)},
+			{"concrete": Color(0.6, 0.55, 0.75), "paint_white": Color(0.75, 0.68, 0.9)},
+		]},
+		"scatter": [
+			["building_block", 160, 38.0, 330.0, 0.9, 1.9, 0.0, true, {"concrete": Color(0.7, 0.72, 0.9)}],
+		],
+		"roadside": [["neon_sign", 85.0, 1.6]],
+	},
+	"moor": {
+		"label": "Charneca",
+		"sky": "kloofendal_28d_misty_puresky", "sky_energy": 0.6, "sun_color": Color(0.9, 0.92, 0.95), "sun_energy": 1.1,
+		"sun_pitch": -35.0, "sun_yaw": -20.0, "ambient": 1.0,
+		"fog_color": Color(0.74, 0.78, 0.8), "fog_density": 0.0065, "fog_aerial": 0.9, "saturation": 0.95,
+		"ground_a": "sparse_grass@1k", "tint_a": Color(0.78, 0.9, 0.66), "scale_a": 0.14,
+		"ground_b": "gravel_road@1k", "tint_b": Color(0.9, 0.88, 0.85), "scale_b": 0.15,
+		"curb_a": Color(0.85, 0.75, 0.1), "curb_b": Color(0.15, 0.15, 0.16),
+		"hill_base": 12.0, "hill_var": 24.0,
+		"scatter": [
+			["fern", 260, 0.0, 160.0, 0.8, 1.5, 0.0, false, {}],
+			["grass_tuft", 400, 0.0, 120.0, 0.8, 1.6, 0.0, false, {}],
+			["rock_a", 60, 2.0, 250.0, 0.6, 1.8, 0.0, true, {}],
+			["rock_b", 40, 2.0, 250.0, 0.6, 1.8, 0.0, true, {}],
+			["tree_dead", 50, 6.0, 220.0, 0.8, 1.3, 0.2, true, {}],
+			["tree_pine", 90, 8.0, 250.0, 0.8, 1.2, 0.4, true, {"leaves_dark": Color(0.7, 0.8, 0.7)}],
+		],
+	},
+	"volcano": {
+		"label": "Vulcão",
+		"sky": "industrial_sunset_02_puresky", "sky_energy": 0.38, "ambient": 1.1,
+		"sun_color": Color(1.0, 0.5, 0.3), "sun_energy": 1.4, "sun_pitch": -16.0, "sun_yaw": -150.0,
+		"fog_color": Color(0.4, 0.17, 0.1), "fog_density": 0.003, "fog_aerial": 0.5, "glow": 0.8,
+		"ground_a": "burned_ground_01@1k", "tint_a": Color(0.6, 0.55, 0.55), "scale_a": 0.12,
+		"ground_b": "rock_ground@1k", "tint_b": Color(0.42, 0.37, 0.36), "scale_b": 0.14,
+		"road_tint": Color(0.6, 0.6, 0.62),
+		"curb_a": Color(1.0, 0.4, 0.05), "curb_b": Color(0.1, 0.1, 0.11), "curb_glow": 0.4,
+		"rail_color": Color(0.3, 0.28, 0.28), "rail_glow": Color(1.0, 0.3, 0.05),
+		"hill_base": -12.0, "hill_var": 34.0, "noise_amp": 5.0,
+		"liquid": "lava", "liquid_level": -2.0,
+		"scatter": [
+			["rock_lava", 130, 2.0, 260.0, 0.6, 1.8, 0.0, true, {}],
+			["tree_dead", 50, 6.0, 220.0, 0.8, 1.3, 0.0, true, {"bark": Color(0.25, 0.22, 0.22)}],
+			["rock_a", 60, 2.0, 250.0, 0.7, 2.0, 0.0, true, {"rock": Color(0.35, 0.32, 0.32), "moss": Color(0.3, 0.28, 0.28)}],
+		],
+	},
+}
+
+
+static func resolve(theme_id: String, overrides := {}) -> Dictionary:
+	var t := BASE.duplicate(true)
+	t.merge(THEMES.get(theme_id, THEMES.valley), true)
+	t.merge(overrides, true)
+	t["id"] = theme_id
+	return t

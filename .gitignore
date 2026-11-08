@@ -1,0 +1,22 @@
+# Godot
+.godot/
+/android/
+*.translation
+export_credentials.cfg
+export/
+builds/
+build/
+
+# Blender
+*.blend1
+*.blend@
+__pycache__/
+
+# Ferramentas locais
+.claude/
+.mcp.json
+addons/godot_mcp_toolkit/
+
+# SO
+.DS_Store
+Thumbs.db
